@@ -1,5 +1,6 @@
 # Cpp-Py Calculator
-A simple application which takes a mathematical expression as the input and displays its result as the output.  
+A simple application which takes a mathematical expression as the input and displays its result as the output.
+
 **Requirements -:**
-- C++
+- GNU C++ compiler
 - Python 3
