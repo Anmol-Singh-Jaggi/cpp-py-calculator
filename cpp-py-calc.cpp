@@ -1,20 +1,29 @@
-#include<iostream>
-#include<string>
-#include<cstdlib>
+#include <iostream>
+#include <string>
+#include <cstdlib>
+
 using namespace std;
 
-int main()
+int main(int argc, char *argv[])
 {
-	cout << "Enter the expression to evaluate\n";
-	string expression;
-	getline( cin, expression );
+    if (argc < 2)
+    {
+        cout << "Usage:" << endl;
+        cout << "./eval expression" <<endl;
+        cout << "Please note, eval used above is just a suggested name for the object file" <<endl;
+        return 0;
+    }
 
-	// Craft the command string
-	string command;
-	command += "python -c ";
-	// Assuming Python 3
-	command +=  "\"print(" + expression + ")\"";
+    string expression = "";
+    for (int i=1; i<argc; i++)
+    {
+        expression += argv[i];
+    }
 
-	// Execute the command
-	system( command.c_str() );
+    // NOTE: this is literally a hack
+    string command = "python -c \"print(" + expression + ")\"";
+
+    system(command.c_str());
+
+    return 0;
 }
