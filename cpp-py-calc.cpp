@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     }
 
     // NOTE: this is literally a hack
-    string command = "python -c \"print(" + expression + ")\"";
+    string command = "python -c \'print(" + expression + ")\'";
 
     system(command.c_str());
 
